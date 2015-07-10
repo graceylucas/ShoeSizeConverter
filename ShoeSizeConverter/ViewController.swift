@@ -46,21 +46,31 @@ class ViewController: UIViewController {
 //        mensConvertedShoeSizeLabel.text = stringWithUpdatedShoeSize
         
     
-// SHORTER VERSION OF CODE FOR THIRD COMMIT
+// FIRST TRY AT REFACTORING
         
+//        // New, shorter code combines the above three actions
+//        var sizeFromTextField = mensShoeSizeTextField.text.toInt()!
+//        
+//        // Defines the constant as 30
+//        let conversionConstant = 30
+//        
+//        // Adds value from text field as an integer to constant
+//        sizeFromTextField += conversionConstant
+//        
+//        //Sets label text to string version of the converted shoe size
+//        mensConvertedShoeSizeLabel.text = "\(sizeFromTextField)"
+
+   
+ // THIRD TRY AT REFACTORING
         
-        // New, shorter code combines the above three actions
-        var sizeFromTextField = mensShoeSizeTextField.text.toInt()!
+        let sizeFromTextField = mensShoeSizeTextField.text.toInt()!
         
         // Defines the constant as 30
         let conversionConstant = 30
         
-        // Adds value from text field as an integer to constant
-        sizeFromTextField += conversionConstant
+        mensConvertedShoeSizeLabel.text = "\(sizeFromTextField + conversionConstant)" + " in European sizes"
         
-        //Sets label text to string version of the converted shoe size
-        mensConvertedShoeSizeLabel.text = "\(sizeFromTextField)"
-
+        
         //Unhides label after the button is pressed
         mensConvertedShoeSizeLabel.hidden = false
         
