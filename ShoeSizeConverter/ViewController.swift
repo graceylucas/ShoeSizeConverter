@@ -27,36 +27,48 @@ class ViewController: UIViewController {
     
     
     @IBAction func convertButtonPressed(sender: UIButton) {
-        //Definies a variable called shoe size and pulls it from the mensShoeSizeTextField
-        let sizeFromTextField = mensShoeSizeTextField.text
+//        // Definies a variable called shoe size and pulls it from the mensShoeSizeTextField
+//        let sizeFromTextField = mensShoeSizeTextField.text
+//        
+//        // Converts shoe size from a string into an integer so it can be added with the constant (matching the types)
+//        let numberFromTextField = sizeFromTextField.toInt()
+//        
+//        // Adding an exclaimation point force unwraps the optional integer; it's no longer an optional interger
+//        var integerFromTextField = numberFromTextField!
         
-        //Converts shoe size from a string into an integer so it can be added with the constant (matching the types)
-        let numberFromTextField = sizeFromTextField.toInt()
+//          //Adds shoe size and constant
+//        integerFromTextField += conversionConstant
         
-        //Adding an exclaimation point force unwraps the optional integer; it's no longer an optional interger
-        var integerFromTextField = numberFromTextField!
+//        //Converts the sum into a string so it can be displayed in the label
+//        let stringWithUpdatedShoeSize = "\(integerFromTextField)"
+//        
+//        //Sets the label text to the text of the new string holding the update shoe size
+//        mensConvertedShoeSizeLabel.text = stringWithUpdatedShoeSize
         
-        //Defines the constant as 30
+    
+// SHORTER VERSION OF CODE FOR THIRD COMMIT
+        
+        
+        // New, shorter code combines the above three actions
+        var sizeFromTextField = mensShoeSizeTextField.text.toInt()!
+        
+        // Defines the constant as 30
         let conversionConstant = 30
         
-        //Adds shoe size and constant
-        integerFromTextField += conversionConstant
+        // Adds value from text field as an integer to constant
+        sizeFromTextField += conversionConstant
         
+        //Sets label text to string version of the converted shoe size
+        mensConvertedShoeSizeLabel.text = "\(sizeFromTextField)"
+
         //Unhides label after the button is pressed
         mensConvertedShoeSizeLabel.hidden = false
-        
-        //Converts the sum into a string so it can be displayed in the label
-        let stringWithUpdatedShoeSize = "\(integerFromTextField)"
-        
-        //Sets the label text to the text of the new string holding the update shoe size
-        mensConvertedShoeSizeLabel.text = stringWithUpdatedShoeSize
         
         //Tucks keyboard away after hitting button
         mensShoeSizeTextField.resignFirstResponder()
         
         //Empties text field after user presses button
         mensShoeSizeTextField.text = ""
-        
         
         
     }
