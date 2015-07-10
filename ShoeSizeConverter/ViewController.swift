@@ -36,10 +36,10 @@ class ViewController: UIViewController {
 //        // Adding an exclaimation point force unwraps the optional integer; it's no longer an optional interger
 //        var integerFromTextField = numberFromTextField!
         
-//          //Adds shoe size and constant
+//          // Adds shoe size and constant
 //        integerFromTextField += conversionConstant
         
-//        //Converts the sum into a string so it can be displayed in the label
+//        // Converts the sum into a string so it can be displayed in the label
 //        let stringWithUpdatedShoeSize = "\(integerFromTextField)"
 //        
 //        //Sets the label text to the text of the new string holding the update shoe size
@@ -63,11 +63,13 @@ class ViewController: UIViewController {
    
  // THIRD TRY AT REFACTORING
         
+        // Converts shoe size into an integer
         let sizeFromTextField = mensShoeSizeTextField.text.toInt()!
         
         // Defines the constant as 30
         let conversionConstant = 30
         
+        // Sets the value of the converted shoe size label text to the sum of the shoe size and the constant and adds explainter text (the text in red) as another string appearing in the label
         mensConvertedShoeSizeLabel.text = "\(sizeFromTextField + conversionConstant)" + " in European sizes"
         
         
