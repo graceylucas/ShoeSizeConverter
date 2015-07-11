@@ -12,6 +12,8 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var mensShoeSizeTextField: UITextField!
     @IBOutlet weak var mensConvertedShoeSizeLabel: UILabel!
+    @IBOutlet weak var womensShoeSizeConverterTextField: UITextField!
+    @IBOutlet weak var womensShoeSizeConverterLabel: UILabel!
     
     
     override func viewDidLoad() {
@@ -27,6 +29,7 @@ class ViewController: UIViewController {
     
     
     @IBAction func convertButtonPressed(sender: UIButton) {
+/*
 //        // Definies a variable called shoe size and pulls it from the mensShoeSizeTextField
 //        let sizeFromTextField = mensShoeSizeTextField.text
 //        
@@ -59,7 +62,7 @@ class ViewController: UIViewController {
 //        
 //        //Sets label text to string version of the converted shoe size
 //        mensConvertedShoeSizeLabel.text = "\(sizeFromTextField)"
-
+*/
    
  // THIRD TRY AT REFACTORING
         
@@ -85,5 +88,25 @@ class ViewController: UIViewController {
         
     }
 
+    
+    @IBAction func womensShoeSizeConverterButtonPressed(sender: UIButton) {
+       let sizeFromTextField = Double ((womensShoeSizeConverterTextField.text as NSString).doubleValue)
+        let conversionConstant = 30.5
+        womensShoeSizeConverterLabel.text = "\(sizeFromTextField + conversionConstant)" + " in European sizes"
+        
+        //Unhides label after the button is pressed
+        womensShoeSizeConverterLabel.hidden = false
+        
+        //Tucks keyboard away after hitting button
+        womensShoeSizeConverterTextField.resignFirstResponder()
+        
+        //Empties text field after user presses button
+        womensShoeSizeConverterTextField.text = ""
+
+        
+        
+    }
+    
+    
 }
 
